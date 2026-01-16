@@ -1,28 +1,28 @@
-name: Silver Price Alert
+# name: Silver Price Alert
 
-on:
-  schedule:
-    - cron: "*/5 * * * *"   # every 5 minutes
-  workflow_dispatch:        # manual run button
+# on:
+#   schedule:
+#     - cron: "*/5 * * * *"   # every 5 minutes
+#   workflow_dispatch:        # manual run button
 
-jobs:
-  run-alert:
-    runs-on: ubuntu-latest
+# jobs:
+#   run-alert:
+#     runs-on: ubuntu-latest
 
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
+#     steps:
+#       - name: Checkout code
+#         uses: actions/checkout@v4
 
-      - name: Setup Python
-        uses: actions/setup-python@v4
-        with:
-          python-version: "3.10"
+#       - name: Setup Python
+#         uses: actions/setup-python@v4
+#         with:
+#           python-version: "3.10"
 
-      - name: Install dependencies
-        run: pip install requests
+#       - name: Install dependencies
+#         run: pip install requests
 
-      - name: Run Silver Alert Script
-        run: python silver_alert.py
-        env:
-          BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
-          CHAT_ID: ${{ secrets.CHAT_ID }}
+#       - name: Run Silver Alert Script
+#         run: python silver_alert.py
+#         env:
+#           BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
+#           CHAT_ID: ${{ secrets.CHAT_ID }}
